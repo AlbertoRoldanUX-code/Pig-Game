@@ -1,13 +1,18 @@
 'use strict';
 
-let scorePlayer1 = document.querySelector('#score--0');
+//Selecting elements:
+let score0El = document.querySelector('#score--0');
+let score1El = document.querySelector('#score--1');
+let diceEl = document.querySelector('.dice');
+let diceButton = document.querySelector('.btn--roll');
 
-scorePlayer1.textContent = '0';
+//Starting conditions:
+score0El.textContent = 0;
+score1El.textContent = 0;
+diceEl.classList.add('hidden');
 
-let scorePlayer2 = document.querySelector('#score--1');
+function randomDiceGenerator() {
+  return Math.trunc(Math.random() * 6 + 1);
+}
 
-scorePlayer2.textContent = '0';
-
-let dice = document.querySelector('.dice');
-
-dice.style.visibility = 'hidden';
+diceButton.addEventListener('click', randomDiceGenerator);
