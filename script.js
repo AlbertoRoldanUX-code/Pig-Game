@@ -11,8 +11,11 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
-function randomDiceGenerator() {
-  return Math.trunc(Math.random() * 6 + 1);
+function displayDice() {
+  diceEl.classList.remove('hidden');
+  let randomDiceRoll = Math.trunc(Math.random() * 6 + 1);
+
+  diceEl.setAttribute('src', `dice-${randomDiceRoll}.png`);
 }
 
-diceButton.addEventListener('click', randomDiceGenerator);
+diceButton.addEventListener('click', displayDice);
